@@ -21,7 +21,7 @@ Enhanced SSH Optimizer 1.0 is a Bash script designed to optimize TCP and SSH set
 You can run the script directly from the command line using `curl`:
 
 ```bash
-sudo bash <(curl -Ls https://raw.githubusercontent.com/Sajjad-Arjmand/TCP-SSH-Optimizer/master/ssh_optimizer.sh)
+sudo bash -c "$(curl -Ls https://raw.githubusercontent.com/Sajjad-Arjmand/TCP-SSH-Optimizer/master/ssh_optimizer.sh)"
 ```
 
 ## Usage
