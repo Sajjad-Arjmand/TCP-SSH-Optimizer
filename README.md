@@ -18,51 +18,38 @@ Enhanced SSH Optimizer 1.0 is a Bash script designed to optimize TCP and SSH set
 
 ## Installation
 
-1. Clone the repository or download the script directly:
-   ```bash
-   git clone https://github.com/yourusername/enhanced-ssh-optimizer.git
-   cd enhanced-ssh-optimizer
-   ```
+You can run the script directly from the command line using `curl`:
 
-2. Make the script executable:
-   ```bash
-   chmod +x ssh_optimizer.sh
-   ```
+```bash
+sudo bash <(curl -Ls https://raw.githubusercontent.com/Sajjad-Arjmand/TCP-SSH-Optimizer/master/ssh_optimizer.sh)
+```
 
 ## Usage
 
-1. **Backup Existing Configurations:**
-   Before running the script, it's recommended to backup your existing configurations:
-   ```bash
-   sudo cp /etc/sysctl.conf /etc/sysctl.conf.backup
-   sudo cp /etc/ssh/ssh_config /etc/ssh/ssh_config.backup
-   ```
+### Verify Changes
 
-2. **Run the Script:**
-   Execute the script with root privileges to apply the optimizations:
-   ```bash
-   sudo bash ./ssh_optimizer.sh
-   ```
+After running the script, verify the applied settings:
 
-3. **Verify Changes:**
-   After running the script, verify the applied settings:
-   ```bash
-   sysctl -p
-   cat /etc/sysctl.conf | grep -A 10 "#SSH_OPTIMIZER"
-   cat /etc/ssh/ssh_config | grep -A 10 "Compression"
-   ```
+```bash
+sudo sysctl -p
+cat /etc/sysctl.conf | grep -A 10 "#SSH_OPTIMIZER"
+cat /etc/ssh/ssh_config | grep -A 10 "Compression"
+```
 
-4. **Test SSH Connection:**
-   Open a new SSH session and observe the improvements in speed and latency.
+### Test SSH Connection
 
-5. **Rollback If Needed:**
-   If you encounter any issues, you can revert the changes using the backup files:
-   ```bash
-   sudo mv /etc/sysctl.conf.backup /etc/sysctl.conf
-   sudo mv /etc/ssh/ssh_config.backup /etc/ssh/ssh_config
-   sudo sysctl -p
-   sudo systemctl restart sshd
-   ```
+Open a new SSH session and observe the improvements in speed and latency.
+
+### Rollback If Needed
+
+If you encounter any issues, you can revert the changes using your backup files:
+
+```bash
+sudo mv /etc/sysctl.conf.backup /etc/sysctl.conf
+sudo mv /etc/ssh/ssh_config.backup /etc/ssh/ssh_config
+sudo sysctl -p
+sudo systemctl restart sshd
+```
 
 ## Script Details
 
@@ -103,4 +90,4 @@ For questions or support, please open an issue on GitHub.
 
 ---
 
-Feel free to modify this README to better suit your repository's structure and your preferences.
+Ensure the script is correctly hosted on your GitHub repository at the specified URL, and replace `yourusername` with your actual GitHub username. You can now add this README to your GitHub repository.
